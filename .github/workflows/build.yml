@@ -129,4 +129,4 @@ jobs:
         export PATH=./mdr:$PATH
         export PATH=./Gwion:$PATH
         export PATH=.:$PATH
-        bash scripts/benchmark.sh
+        bash benchmark.sh
