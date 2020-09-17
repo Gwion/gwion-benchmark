@@ -7,8 +7,8 @@ result_dir="results"
 plot_script="bench.plot"
 : "${repeats:=10}"
 
-[ -d results ] && git checkout results results
-[ -d png ] && git checkout results png
+[ -d results ] && git checkout origin/results results
+[ -d png ] && git checkout origin/results png
 
 run() {
   perf stat -r"$repeats" "$1" "$test_dir/$3.$2" 2>&1 | grep "time elapsed" |
@@ -34,7 +34,6 @@ plot() {
   gnuplot -e "bench='$1'" "$plot_script"
 }
 
-#[ -d "$result_dir/results" ] || mkdir "$result_dir"
 for bench in $(get_list)
 do
   get_test "$bench"
