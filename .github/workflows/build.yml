@@ -139,4 +139,5 @@ jobs:
         git add results png
         git commit -am "Automated report"
         git fetch origin results
+        git pull origin results
         git push origin results
