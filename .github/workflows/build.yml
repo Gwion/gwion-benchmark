@@ -129,4 +129,5 @@ jobs:
         export PATH=./mdr:$PATH
         export PATH=./Gwion:$PATH
         export PATH=.:$PATH
+        git fetch origin/results
         bash benchmark.sh
