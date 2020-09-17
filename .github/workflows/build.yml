@@ -131,3 +131,11 @@ jobs:
         export PATH=.:$PATH
         git fetch origin results
         bash benchmark.sh
+
+    - name: Push results
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add results png
+        git commit -am "Automated report"
+        git push origin results
