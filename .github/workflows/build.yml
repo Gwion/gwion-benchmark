@@ -11,7 +11,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       name: Checkout
     - uses: actions/setup-python@v1
       name: Setup Python
