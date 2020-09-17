@@ -7,6 +7,9 @@ result_dir="results"
 plot_script="bench.plot"
 : "${repeats:=10}"
 
+[ -d results ] && git checkout results results
+[ -d png ] && git checkout results png
+
 run() {
   perf stat -r"$repeats" "$1" "$test_dir/$3.$2" 2>&1 | grep "time elapsed" |
     sed 's/ *\([0-9]*\),\([0-9]*\) .* seconds time elapsed *( +- *\([0-9]*\),\([0-9]*\)% )/\1.\2 \3.\4/'
