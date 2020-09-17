@@ -11,7 +11,7 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       name: Checkout
     - uses: actions/setup-python@v1
       name: Setup Python
@@ -130,10 +130,3 @@ jobs:
         export PATH=./Gwion:$PATH
         export PATH=.:$PATH
         bash benchmark.sh
-
-    - name: Push results
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add results png
-        git push origin HEAD:results
