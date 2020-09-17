@@ -120,7 +120,8 @@ jobs:
     - name: Benchmark
       run: |
         git fetch origin results
-        git checkout results        
+        git checkout results
+        git checkout master benchmark.sh bench.plot
         echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
         sudo apt-get update
         sudo apt-get install gnuplot chuck
