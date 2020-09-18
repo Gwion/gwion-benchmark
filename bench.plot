@@ -1,10 +1,5 @@
 set terminal png truecolor
 
-#if (!exists("bench"))
-#  bench = 'bench'
-#if (!exists("test_dir"))
-#  test_dir = 'tests/benchmark'
-
 dat_name = sprintf("results/%s.dat", bench)
 
 stats dat_name using 0:2 noout
@@ -18,7 +13,7 @@ set boxwidth 0.50
 set nokey
 set xtics nomirror
 set ytics nomirror
-
+set ylabel "seconds"
 set style fill transparent solid 0.25 # partial transparency
 set style fill noborder # no separate top/bottom lines
 
