@@ -136,7 +136,7 @@ jobs:
         git pull origin
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout master benchmark.sh bench.plot src
+        git checkout origin/master benchmark.sh bench.plot src
         bash benchmark.sh
         git rm master benchmark.sh bench.plot src
         git add results png
