@@ -1,0 +1,5 @@
+gwion            0.15107 +- 0.00151 seconds time elapsed  ( +-  1.00% )
+wren           0.156848 +- 0.000673 seconds time elapsed  ( +-  0.43% )
+lua            0.32583 +- 0.00490 seconds time elapsed  ( +-  1.50% )
+python            0.94684 +- 0.00490 seconds time elapsed  ( +-  0.52% )
+ruby            0.24293 +- 0.00101 seconds time elapsed  ( +-  0.42% )
