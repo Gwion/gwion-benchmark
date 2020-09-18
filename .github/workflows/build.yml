@@ -133,13 +133,14 @@ jobs:
         export PATH=./Gwion:$PATH
         export PATH=.:$PATH
         git fetch origin results
+        git pull origin results
         bash benchmark.sh
 
     - name: Commit files
       run: |
+        git checkout results
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add png results
         git commit -m "Add changes"
     - name: Push changes
       uses: ad-m/github-push-action@master
