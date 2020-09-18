@@ -138,7 +138,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git checkout origin/master benchmark.sh bench.plot src
         bash benchmark.sh
-        git rm benchmark.sh bench.plot src
+        git rm -rf benchmark.sh bench.plot src
         git add results png
         git commit -m "Add changes"
 
