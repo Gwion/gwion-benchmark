@@ -1,14 +1,14 @@
 #! Ported from the Wren version.
 
 class Tree {
-  int item;
-  Tree ref left, right;
+  var int item;
+  ref Tree left, right;
 
   fun static Tree new_Tree(int it, int depth) {
-    Tree t;
+    var Tree t;
     it => t.item;
     if (depth > 0) {
-      it + it => int item2;
+      it + it => var int item2;
       --depth;
       new_Tree(item2 - 1, depth) @=> t.left;
       new_Tree(item2, depth) @=> t.right;
@@ -23,24 +23,24 @@ class Tree {
   }
 }
 
-4 => int minDepth;
-12 => int maxDepth;
-maxDepth + 1 => int stretchDepth;
+4 => var int minDepth;
+12 => var int maxDepth;
+maxDepth + 1 => var int stretchDepth;
 
 <<< "stretch tree of depth ", stretchDepth, " check: ",
   Tree.new_Tree(0, stretchDepth).check() >>>;
 
-Tree.new_Tree(0, maxDepth) @=> Tree ref longLivedTree;
+Tree.new_Tree(0, maxDepth) @=> ref Tree longLivedTree;
 
 #! iterations = 2 ** maxDepth
-1 => int iterations;
-for (int d; d < maxDepth; ++d)
+1 => var int iterations;
+for (var int d; d < maxDepth; ++d)
   2 *=> iterations;
 
-minDepth => int depth;
+minDepth => var int depth;
 while (depth < stretchDepth) {
-  int check;
-  for (int i; i < iterations; ++i)
+  var int check;
+  for (var int i; i < iterations; ++i)
     Tree.new_Tree(i, depth).check() + Tree.new_Tree(-i, depth).check() +=> check;
 
   <<< iterations * 2, " trees of depth ", depth, " check: ", check >>>;

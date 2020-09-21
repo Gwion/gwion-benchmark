@@ -1,9 +1,9 @@
-int list[0];
+var int list[0];
 
-for (int i; i < 1000000; ++i)
+for (var int i; i < 1000000; ++i)
  list << i;
 
-int sum;
+var int sum;
 foreach(i : list)
   i +=> sum;
 

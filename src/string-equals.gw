@@ -1,5 +1,5 @@
-int count;
-for (int i; i < 1000000; ++i) {
+var int count;
+for (var int i; i < 1000000; ++i) {
   if ("abc" == "abc") ++count;
   if ("a slightly longer string" ==
       "a slightly longer string") ++count;
