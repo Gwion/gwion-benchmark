@@ -16,7 +16,7 @@ jobs:
     steps:
 
     - name: Testing
-      run: echo ${{ github.event.client_payload.commit_info }} > commit_info
+      run: echo ${{ github.event.client_payload.commit_info }}
 
     - uses: actions/checkout@v2
       name: Checkout
