@@ -4,8 +4,7 @@ on:
   push:
     branches: 
     - 'master'
-  repository_dispatch:
-    types: [benchmark-event]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -142,9 +141,8 @@ jobs:
         git checkout origin/master benchmark.sh bench.plot src
         bash benchmark.sh
         git rm -rf benchmark.sh bench.plot src
-        echo "${{ github.event.client_payload.commit_info }}" > commit_info
-        git add results png commit_info
-        git commit -m "Add changes"
+        git add results png
+        git commit -m "Add changes (Manual trigger)"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
