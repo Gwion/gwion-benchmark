@@ -14,6 +14,10 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     
     steps:
+
+    - name: Testing
+      run: echo ${{ github.event.client_payload.commit_info }} > commit_info
+
     - uses: actions/checkout@v2
       name: Checkout
       with:
