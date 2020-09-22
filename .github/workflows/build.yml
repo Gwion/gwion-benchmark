@@ -146,7 +146,7 @@ jobs:
         git checkout origin/master benchmark.sh bench.plot src
         bash benchmark.sh
         git rm -rf benchmark.sh bench.plot src
-        echo ${{ github.event.client_payload.commit_info }} > commit_info
+        echo "${{ github.event.client_payload.commit_info }}" > commit_info
         git add results png commit_info
         git commit -m "Add changes"
 
