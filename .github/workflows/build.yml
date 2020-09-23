@@ -21,50 +21,8 @@ jobs:
     - uses: actions/setup-ruby@v1
       name: Setup Ruby
 
-    - uses: actions/cache@v1
-      name: Mdr [ cache ]
-      id: mdr-bin
-      with:
-        path: mdr
-        key: ${{ runner.os }}-mdr
-
-    - name: Mdr
-      if: steps.mdr-bin.outputs.cache-hit != 'true'
-      run: |
-        git clone https://github.com/fennecdjay/mdr
-        cd mdr
-        make
-
-    - name: Mdr
-      if: steps.mdr-bin.outputs.cache-hit == 'true'
-      run: |
-        cd mdr
-        git pull
-        git checkout master
-        make
-
-    - uses: actions/cache@v1
-      name: Gwion [ cache ]
-      id: gwion-bin
-      with:
-        path: Gwion
-        key: ${{ runner.os }}-gwion
-
     - name: Gwion
-      if: steps.gwion-bin.outputs.cache-hit != 'true'
-      uses: fennecdjay/gwion-action@v1
-
-    - name: Gwion [ update ]
-      if: steps.gwion-bin.outputs.cache-hit == 'true'
-      run: |
-        cd Gwion
-        if [ $(git rev-parse HEAD) != $(git ls-remote https://github.com/fennecdjay/Gwion.git HEAD | cut -f1) ]
-        then
-          git pull
-          git submodule update util ast
-          make
-        fi
-        cp gwion ..
+      run: bash update.sh
 
     - uses: actions/cache@v1
       name: Wren [ cache ]
