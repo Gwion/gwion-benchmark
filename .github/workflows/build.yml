@@ -1,9 +1,6 @@
 name: CI
 
 on:
-  push:
-    branches: 
-    - 'master'
   repository_dispatch:
     types: [benchmark-event]
 
