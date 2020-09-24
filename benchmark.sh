@@ -29,8 +29,8 @@ get_test() {
   done > "$result_dir/$1.dat"
 }
 run_test() {
-  get_test "$bench"
-  plot "$bench"
+  get_test "$1"
+  plot "$1"
 }
 
 plot() {
