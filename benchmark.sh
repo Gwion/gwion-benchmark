@@ -34,7 +34,7 @@ plot() {
 run_test() {
   echo "running $1 tests"
   get_test "$1"
-  plot "$1"
+  plot "bench=$1"
 }
 
 for bench in $(get_list)
