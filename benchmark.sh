@@ -26,14 +26,15 @@ get_test() {
     fi
   done > "$result_dir/$1.dat"
 }
+
+plot() {
+  gnuplot -e "$1" "$plot_script"
+}
+
 run_test() {
   echo "running $1 tests"
   get_test "$1"
   plot "$1"
-}
-
-plot() {
-  gnuplot -e "$1" "$plot_script"
 }
 
 for bench in $(get_list)
