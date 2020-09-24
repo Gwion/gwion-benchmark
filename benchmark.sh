@@ -7,8 +7,6 @@ result_dir="results"
 plot_script="bench.plot"
 : "${repeats:=10}"
 
-set -m
-
 run_perf() {
   perf stat -r"$repeats" "$1" "$test_dir/$3.$2" 2>&1 | grep "time elapsed" |
     sed 's/ *\([0-9]*\),\([0-9]*\) .* seconds time elapsed *( +- *\([0-9]*\),\([0-9]*\)% )/\1.\2 \3.\4/'
@@ -29,17 +27,15 @@ get_test() {
   done > "$result_dir/$1.dat"
 }
 run_test() {
+  echo "running $1 tests"
   get_test "$1"
   plot "$1"
 }
 
 plot() {
-  gnuplot -e "bench='$1'" "$plot_script"
+  gnuplot -e "$1" "$plot_script"
 }
 
 for bench in $(get_list)
-do
-  run_test "$bench" &
+do run_test "$bench"
 done
-
-wait
