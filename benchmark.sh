@@ -5,7 +5,7 @@ extension=("gw" "wren" "lua" "py" "ck" "rb")
 test_dir="src"
 result_dir="results"
 plot_script="bench.plot"
-: "${repeats:=10}"
+: "${repeats:=5}"
 
 run_perf() {
   perf stat -r"$repeats" "$1" "$test_dir/$3.$2" 2>&1 | grep "time elapsed" |
