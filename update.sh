@@ -15,4 +15,4 @@ update() {
   rm $file
 }
 
-update fennecdjay Gwion
+update Gwion Gwion
