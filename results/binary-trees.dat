@@ -1,6 +1,6 @@
-gwion             0.1677 +- 0.0247 seconds time elapsed  ( +- 14.75% )
-wren            0.32502 +- 0.00251 seconds time elapsed  ( +-  0.77% )
-lua            0.34149 +- 0.00493 seconds time elapsed  ( +-  1.44% )
-python             0.5219 +- 0.0102 seconds time elapsed  ( +-  1.96% )
-chuck            10.6280 +- 0.0270 seconds time elapsed  ( +-  0.25% )
-ruby             0.3593 +- 0.0847 seconds time elapsed  ( +- 23.58% )
+gwion Binary file (standard input) matches
+wren            0.34389 +- 0.00748 seconds time elapsed  ( +-  2.17% )
+lua           0.334907 +- 0.000524 seconds time elapsed  ( +-  0.16% )
+python            0.50101 +- 0.00315 seconds time elapsed  ( +-  0.63% )
+chuck            11.1258 +- 0.0192 seconds time elapsed  ( +-  0.17% )
+ruby              0.406 +- 0.120 seconds time elapsed  ( +- 29.48% )
