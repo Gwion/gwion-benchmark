@@ -2,7 +2,7 @@
 
 class Tree {
   var int item;
-  var Tree? left, right;
+  late Tree left, right;
 
   fun static Tree new_Tree(int it, int depth) {
     var Tree t;
@@ -10,16 +10,16 @@ class Tree {
     if (depth > 0) {
       it + it => var int item2;
       --depth;
-      new_Tree(item2 - 1, depth) @=> t.left.val;
-      new_Tree(item2, depth) @=> t.right.val;
+      new_Tree(item2 - 1, depth) @=> t.left;
+      new_Tree(item2, depth) @=> t.right;
     }
     return t;
   }
 
   fun int check() {
-    if (!left.is(val))
+    if (!left)
       return item;
-    return item + left.val.check() - right.val.check();
+    return item + left.check() - right.check();
   }
 }
 
