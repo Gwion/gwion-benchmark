@@ -1,4 +1,4 @@
-gwion            0.17066 +- 0.00324 seconds time elapsed  ( +-  1.90% )
-wren            0.22028 +- 0.00569 seconds time elapsed  ( +-  2.58% )
-python             0.4315 +- 0.0153 seconds time elapsed  ( +-  3.55% )
-chuck             9.3687 +- 0.0295 seconds time elapsed  ( +-  0.32% )
+gwion            0.16878 +- 0.00193 seconds time elapsed  ( +-  1.14% )
+wren            0.22432 +- 0.00373 seconds time elapsed  ( +-  1.66% )
+python            0.43349 +- 0.00973 seconds time elapsed  ( +-  2.24% )
+chuck            10.7331 +- 0.0515 seconds time elapsed  ( +-  0.48% )
