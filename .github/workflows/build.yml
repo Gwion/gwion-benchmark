@@ -30,8 +30,8 @@ jobs:
         cd core.horse64.org
         git submodule update --init
         make release
-        echo './core.horse64.org/horsec run $1' > horse64
-        chmod +x horse64
+        echo './core.horse64.org/horsec run $1' > ../horse64
+        chmod +x ../horse64
 
     - uses: actions/cache@v1
       name: Wren [ cache ]
@@ -98,7 +98,6 @@ jobs:
         export PATH=./lua:$PATH
         export PATH=./mdr:$PATH
         export PATH=./Gwion:$PATH
-        export PATH=./core.horse64.org:$PATH
         export PATH=.:$PATH
         git checkout results
         git pull origin
