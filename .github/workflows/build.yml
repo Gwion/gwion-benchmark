@@ -30,8 +30,8 @@ jobs:
         cd core.horse64.org
         git submodule update --init
         make release
-        echo './core.horse64.org/horsec run $1' > horse
-        chmod +x horse
+        echo './core.horse64.org/horsec run $1' > horse64
+        chmod +x horse64
 
     - uses: actions/cache@v1
       name: Wren [ cache ]
