@@ -30,7 +30,7 @@ jobs:
         cd core.horse64.org
         git submodule update --init
         make
-        echo './horsec run $1' > horse
+        echo './core.horse64.org/horsec run $1' > horse
         chmod +x horse
 
     - uses: actions/cache@v1
