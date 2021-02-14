@@ -31,6 +31,16 @@ jobs:
         path: wren
         key: ${{ runner.os }}-wren
 
+    - name: Horse64
+      run: |
+        git clone https://github.com/horse64/core.horse64.org
+        cd core.horse64.org
+        git submodule update --init
+        make
+
+    - name: wren [ install ]
+      run: cp wren/bin/wren_test wren/bin/wren
+
     - name: wren [ init ]
       if: "steps.wren.outputs.cache-hit != 'true'"
       run: |
@@ -89,6 +99,7 @@ jobs:
         export PATH=./lua:$PATH
         export PATH=./mdr:$PATH
         export PATH=./Gwion:$PATH
+        export PATH=./core.horse64.org:$PATH
         export PATH=.:$PATH
         git checkout results
         git pull origin
