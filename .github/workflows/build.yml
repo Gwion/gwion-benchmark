@@ -29,7 +29,7 @@ jobs:
         git clone https://github.com/horse64/core.horse64.org
         cd core.horse64.org
         git submodule update --init
-        make
+        make release
         echo './core.horse64.org/horsec run $1' > horse
         chmod +x horse
 
