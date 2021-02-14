@@ -24,19 +24,21 @@ jobs:
     - name: Gwion
       run: bash update.sh
 
-    - uses: actions/cache@v1
-      name: Wren [ cache ]
-      id: wren
-      with:
-        path: wren
-        key: ${{ runner.os }}-wren
-
     - name: Horse64
       run: |
         git clone https://github.com/horse64/core.horse64.org
         cd core.horse64.org
         git submodule update --init
         make
+        echo './horsec run $1' > horse
+        chmod +x horse
+
+    - uses: actions/cache@v1
+      name: Wren [ cache ]
+      id: wren
+      with:
+        path: wren
+        key: ${{ runner.os }}-wren
 
     - name: wren [ init ]
       if: "steps.wren.outputs.cache-hit != 'true'"

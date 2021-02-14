@@ -1,6 +1,6 @@
 #!/bin/bash
 
-language=("gwion" "wren" "lua" "python" "chuck" "ruby" "horsec")
+language=("gwion" "wren" "lua" "python" "chuck" "ruby" "horse")
 extension=("gw" "wren" "lua" "py" "ck" "rb" "h64")
 test_dir="src"
 result_dir="results"
