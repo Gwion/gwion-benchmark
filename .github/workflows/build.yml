@@ -38,9 +38,6 @@ jobs:
         git submodule update --init
         make
 
-    - name: wren [ install ]
-      run: cp wren/bin/wren_test wren/bin/wren
-
     - name: wren [ init ]
       if: "steps.wren.outputs.cache-hit != 'true'"
       run: |
