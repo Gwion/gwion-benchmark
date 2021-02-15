@@ -1,0 +1,16 @@
+
+func main {
+    var list = []
+    var i = 0
+    while i < 1000000 {
+        list[i + 1] = i
+        i += 1
+    }
+
+    var sum = 0
+    for num in list {
+        sum += num
+    }
+
+    print(sum)
+}
