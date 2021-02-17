@@ -120,4 +120,4 @@ jobs:
     - name: Chuck Fib Debug
       run: |
         git checkout master src
-        time chuck -s src/fib-recurs.ck
+        perf stat chuck -s src/fib-recurs.ck
