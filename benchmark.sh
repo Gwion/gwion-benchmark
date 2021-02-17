@@ -28,13 +28,13 @@ get_test() {
 }
 
 plot() {
-  gnuplot -e "$1" "$plot_script"
+  gnuplot -e "$1" -e "$2" "$plot_script"
 }
 
 run_test() {
   echo "running $1 tests"
   get_test "$1"
-  plot "bench='$1'"
+  plot "bench='$1'" "version='$(bash version.sh)'"
 }
 
 for bench in $(get_list)
