@@ -13,7 +13,7 @@ set boxwidth 0.50
 set nokey
 set xtics nomirror
 set ytics nomirror
-set ylabel "seconds"
+set ylabel "seconds (lower is better)"
 set style fill transparent solid 0.25 # partial transparency
 set style fill noborder # no separate top/bottom lines
 
