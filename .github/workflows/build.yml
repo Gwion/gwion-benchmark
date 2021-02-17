@@ -116,3 +116,8 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: results
+
+    - name: Chuck Fib Debug
+      run: |
+        git checkout master src
+        chuck -s src/results
