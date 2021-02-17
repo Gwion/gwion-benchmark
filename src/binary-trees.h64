@@ -1,0 +1,61 @@
+import math from core.horse64.org
+
+class Tree {
+    var value = 0
+    var left_child = none
+    var right_child = none
+
+    func init(value, depth=0) {
+        self.value = value
+        if (depth > 0) {
+            var value2 = value * 2
+            depth -= 1
+            self.left_child = new Tree(value2 - 1, depth=depth)
+            self.right_child = new Tree(value2, depth=depth)
+        }
+    }
+
+    func sum {
+        var result = self.value
+        if (self.left_child != none) {
+            result += self.left_child.sum()
+        }
+        if (self.right_child != none) {
+            result -= self.right_child.sum()
+        }
+        return result
+    }
+}
+
+func main {
+    var min_depth = 4
+    var max_depth = 12
+
+    print(
+        "Tree of depth " + (max_depth + 1).as_str + " sum: " +
+        (new Tree(0, depth=(max_depth + 1))).sum().as_str
+    )
+
+    var long_lived_tree = new Tree(0, depth=max_depth)
+
+    var depth = min_depth
+    while depth <= max_depth {
+        var iterations = math.pow(2, max_depth - depth + min_depth)
+        var sum = 0
+        var i = 1
+        while i <= iterations {
+            sum += (new Tree(i, depth=depth)).sum() +
+                   (new Tree(-i, depth=depth)).sum()
+            i += 1
+        }
+
+        print((iterations * 2).as_str + " trees of depth " +
+            depth.as_str + " sum: " + sum.as_str)
+        depth += 2
+    }
+
+    print(
+        "Long lived tree of depth " + max_depth.as_str +
+        " sum: " + long_lived_tree.sum().as_str
+    )
+}
