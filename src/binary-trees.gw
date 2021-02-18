@@ -10,8 +10,8 @@ class Tree {
     if (depth > 0) {
       it + it => var int item2;
       --depth;
-      new_Tree(item2 - 1, depth) @=> t.left;
-      new_Tree(item2, depth) @=> t.right;
+      new_Tree(item2 - 1, depth) => t.left;
+      new_Tree(item2, depth) => t.right;
     }
     return t;
   }
@@ -30,7 +30,7 @@ maxDepth + 1 => var int stretchDepth;
 <<< "stretch tree of depth ", stretchDepth, " check: ",
   Tree.new_Tree(0, stretchDepth).check() >>>;
 
-Tree.new_Tree(0, maxDepth) @=> var Tree longLivedTree;
+Tree.new_Tree(0, maxDepth) => var Tree longLivedTree;
 
 #! iterations = 2 ** maxDepth
 1 => var int iterations;
