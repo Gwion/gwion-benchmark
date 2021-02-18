@@ -1,7 +1,7 @@
 gwion Binary file (standard input) matches
-wren            0.31668 +- 0.00256 seconds time elapsed  ( +-  0.81% )
-lua            0.33796 +- 0.00189 seconds time elapsed  ( +-  0.56% )
-python            0.49886 +- 0.00270 seconds time elapsed  ( +-  0.54% )
-chuck            10.4269 +- 0.0421 seconds time elapsed  ( +-  0.40% )
-ruby              0.496 +- 0.187 seconds time elapsed  ( +- 37.66% )
-horse64            1.34166 +- 0.00724 seconds time elapsed  ( +-  0.54% )
+wren            0.29374 +- 0.00216 seconds time elapsed  ( +-  0.73% )
+lua            0.32847 +- 0.00310 seconds time elapsed  ( +-  0.94% )
+python            0.48074 +- 0.00335 seconds time elapsed  ( +-  0.70% )
+chuck            10.1037 +- 0.0535 seconds time elapsed  ( +-  0.53% )
+ruby              0.404 +- 0.105 seconds time elapsed  ( +- 26.05% )
+horse64             1.3203 +- 0.0151 seconds time elapsed  ( +-  1.14% )
