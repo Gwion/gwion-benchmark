@@ -92,8 +92,8 @@ jobs:
         echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
         sudo apt-get update
         sudo apt-get install gnuplot chuck
-#        echo 'chuck --silent $@' > ./chuck
-#        chmod +x ./chuck
+        #echo 'chuck --silent $@' > ./chuck
+        #chmod +x ./chuck
         export PATH=./wren/bin:$PATH
         export PATH=./lua:$PATH
         export PATH=./mdr:$PATH
