@@ -92,8 +92,8 @@ jobs:
         echo 1 | sudo tee /proc/sys/kernel/perf_event_paranoid
         sudo apt-get update
         sudo apt-get install gnuplot chuck
-        echo 'chuck --silent $@' > ./chuck
-        chmod +x ./chuck
+#        echo 'chuck --silent $@' > ./chuck
+#        chmod +x ./chuck
         export PATH=./wren/bin:$PATH
         export PATH=./lua:$PATH
         export PATH=./mdr:$PATH
@@ -105,7 +105,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git checkout origin/master benchmark.sh bench.plot src
-        PATH=$PATH bash benchmark.sh
+        bash benchmark.sh
         git rm -rf benchmark.sh bench.plot src
         echo "${{ github.event.client_payload.commit_info }}" > commit_info
         git add results png commit_info
