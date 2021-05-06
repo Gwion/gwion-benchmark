@@ -115,7 +115,7 @@ jobs:
         git config --local user.name "GitHub Action"
         git checkout origin/master benchmark.sh version.sh bench.plot src
         bash benchmark.sh
-        git rm -rf benchmark.sh bench.plot src
+        git rm -rf benchmark.sh version.sh bench.plot src
         echo "${{ github.event.client_payload.commit_info }}" > commit_info
         git add results png commit_info
         git commit -m "Add changes"
