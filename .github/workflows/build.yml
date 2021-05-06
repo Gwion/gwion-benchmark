@@ -33,6 +33,14 @@ jobs:
         echo './core.horse64.org/horsec run $1' > ../horse64
         chmod +x ../horse64
 
+    - name: Dictu
+      run: |
+        git clone https://github.com/dictu-lang/Dictu.git
+        cd Dictu
+        cmake -DCMAKE_BUILD_TYPE=Release -DDISABLE_HTTP=1 -B ./build
+        cmake --build ./build
+        chmod +x ./dictu
+
     - uses: actions/cache@v1
       name: Wren [ cache ]
       id: wren
@@ -98,6 +106,7 @@ jobs:
         export PATH=./lua:$PATH
         export PATH=./mdr:$PATH
         export PATH=./Gwion:$PATH
+        export PATH=./Dictu:$PATH
         export PATH=.:$PATH
         git checkout results
         git pull origin

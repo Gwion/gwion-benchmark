@@ -1,7 +1,7 @@
 #!/bin/bash
 
-language=("gwion" "wren" "lua" "python" "chuck" "ruby" "horse64")
-extension=("gw" "wren" "lua" "py" "ck" "rb" "h64")
+language=("gwion" "wren" "lua" "python" "chuck" "ruby" "horse64", "dictu")
+extension=("gw" "wren" "lua" "py" "ck" "rb" "h64", "du")
 test_dir="src"
 result_dir="results"
 plot_script="bench.plot"
