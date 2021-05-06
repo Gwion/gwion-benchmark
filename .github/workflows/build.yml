@@ -113,7 +113,7 @@ jobs:
         echo "info ${{ github.event.client_payload.commit_info }}"
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git checkout origin/master benchmark.sh bench.plot src
+        git checkout origin/master benchmark.sh version.sh bench.plot src
         bash benchmark.sh
         git rm -rf benchmark.sh bench.plot src
         echo "${{ github.event.client_payload.commit_info }}" > commit_info
