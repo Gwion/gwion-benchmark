@@ -15,4 +15,10 @@ update() {
   rm $file
 }
 
-update Gwion Gwion
+#update Gwion Gwion
+
+# build gwion normally for now
+git clone --recursive https://github.com/Gwion/Gwion
+cd Gwion
+make
+cp gwion ..
