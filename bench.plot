@@ -1,4 +1,4 @@
-set terminal png truecolor
+set terminal png size 900,900 truecolor
 
 dat_name = sprintf("results/%s.dat", bench)
 
@@ -23,7 +23,7 @@ set bmargin 5
 set size 1.0, 0.8
 set origin 0, 0.2
 set label font ",2"
-set label sprintf("Runtime versions:\n%s", version) at screen 0.1,screen 0.3
+set label sprintf("Runtime versions:\n%s", version) at screen 0.1,screen 0.25
 
 plot dat_name using 0:2:($2*($3/100.0)):xtic(2) with boxerrorbar lc "blue" notitle, \
   '' using 0:(max-(0.05*max)):1 with labels
