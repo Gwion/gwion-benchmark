@@ -1,7 +1,7 @@
 #!/bin/bash
 
-language=("gwion" "wren" "lua" "python" "chuck" "ruby" "horse64", "dictu")
-extension=("gw" "wren" "lua" "py" "ck" "rb" "h64", "du")
+language=("gwion" "wren" "lua" "python" "chuck" "ruby" "horse64" "dictu")
+extension=("gw" "wren" "lua" "py" "ck" "rb" "h64" "du")
 test_dir="src"
 result_dir="results"
 plot_script="bench.plot"
@@ -23,6 +23,7 @@ get_test() {
   do
     if [ -f "$test_dir/$1.${extension[$i]}" ]
     then echo "${language[$i]} $(run_perf "${language[$i]}" "${extension[$i]}" "$1")"
+      echo "${language[$i]} $(run_perf "${language[$i]}" "${extension[$i]}" "$1")" >&2
     fi
   done > "$result_dir/$1.dat"
 }
