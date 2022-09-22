@@ -109,15 +109,15 @@ jobs:
     
     - name: Pa
       run: |
-        url=https://github.com/valkarias/Pa/releases/download/ubuntu-latest/
-        file=PBuild_ubuntu-latest.zip
+        url=https://github.com/valkarias/PBuild/releases/download/latest/
+        file=ubuntu-latest-a.zip
         wget "$url/$file"
         unzip $file
         rm $file
-        chmod +x pbuild/pbuild
-        ./pbuild/pbuild download
-        ./pbuild/pbuild build --cc-type=gcc
-        mv ~/Pa/Pa-master/bin/Pa pa
+        chmod +x pbuild
+        ./pbuild download
+        ./pbuild build --cc-type=gcc
+        mv ~/Pa/Pa-master/bin/Pa .  
 
     - name: Kuroko
       run: |
