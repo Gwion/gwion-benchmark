@@ -27,7 +27,7 @@ jobs:
 
     - name: Horse64
       run: |
-        git clone https://github.com/horse64/core.horse64.org
+        git clone https://github.com/horse64/old-core.horse64.org
         cd core.horse64.org
         git submodule update --init
         make release
