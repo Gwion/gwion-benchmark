@@ -28,10 +28,10 @@ jobs:
     - name: Horse64
       run: |
         git clone https://github.com/horse64/old-core.horse64.org
-        cd core.horse64.org
+        cd old-core.horse64.org
         git submodule update --init
         make release
-        echo './core.horse64.org/horsec run $1' > ../horse64
+        echo './old-core.horse64.org/horsec run $1' > ../horse64
         chmod +x ../horse64
 
     - name: Dictu
