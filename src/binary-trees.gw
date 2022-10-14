@@ -2,7 +2,8 @@
 
 class final Tree {
   var int item;
-  late Tree left, right;
+  late Tree left;
+  late Tree right;
 
   operator new(int it, int depth) {
     it :=> item;
@@ -33,7 +34,7 @@ new Tree(0, maxDepth) :=> var Tree longLivedTree;
 #! iterations = 2 ** maxDepth
 1 :=> var int iterations;
 for (var int d; d < maxDepth; ++d)
-  2 *:=> iterations;
+  2 *=> iterations;
 
 minDepth :=> var int depth;
 while (depth < stretchDepth) {

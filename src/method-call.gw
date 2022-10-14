@@ -8,7 +8,8 @@ class Toggle {
 }
 
 class NthToggle extends Toggle {
-  var int count, countMax;
+  var int count;
+  var int countMax;
   fun Toggle activate() {
     if(++count >= countMax) {
       (this $ Toggle).activate();
